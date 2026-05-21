@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">生活常识</string>
+    <string name="home_title">生活常识百科</string>
+    <string name="home_subtitle">认识身边的动物、车、果蔬与花卉</string>
+    <string name="back">返回</string>
+    <string name="search_hint">搜索…</string>
+</resources>
