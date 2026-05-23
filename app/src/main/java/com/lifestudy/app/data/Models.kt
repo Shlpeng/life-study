@@ -18,4 +18,13 @@ data class Category(
     val subtitle: String,
     val accent: Long,
     val items: List<Item>,
+    /**
+     * 可选: 本地 drawable 资源 ID, 优先于 emoji 用作分类卡片图标.
+     * 0 表示未设置, UI 会 fallback 到 [emoji].
+     *
+     * 注意: Android 资源 ID 是构建期生成的, 跨 build 可能变化,
+     * 因此本字段**不持久化到 JSON**, 仅由内置 [DataSource] 提供;
+     * 用户自定义分类始终为 0, 走 emoji 路径.
+     */
+    val iconRes: Int = 0,
 )

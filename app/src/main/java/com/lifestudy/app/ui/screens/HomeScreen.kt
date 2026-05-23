@@ -1,5 +1,6 @@
 package com.lifestudy.app.ui.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -17,6 +18,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
@@ -51,6 +53,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -259,7 +262,15 @@ private fun CategoryCard(
                     ),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(text = category.emoji, fontSize = 44.sp)
+                if (category.iconRes != 0) {
+                    Image(
+                        painter = painterResource(category.iconRes),
+                        contentDescription = category.name,
+                        modifier = Modifier.size(56.dp),
+                    )
+                } else {
+                    Text(text = category.emoji, fontSize = 44.sp)
+                }
             }
             Column(
                 modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),

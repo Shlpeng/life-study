@@ -1,5 +1,7 @@
 package com.lifestudy.app.data
 
+import com.lifestudy.app.R
+
 object DataSource {
 
     // 用 picsum.photos 作为占位图源: 国内可访问, 同一 seed 始终返回同一张图.
@@ -590,8 +592,67 @@ object DataSource {
         )
     )
 
+    private val ultraman = Category(
+        id = "ultraman",
+        name = "奥特曼",
+        emoji = "🦸",
+        subtitle = "认识奥特一族的代表战士",
+        accent = 0xFFFF7A7A,
+        iconRes = R.drawable.ic_ultraman,
+        items = listOf(
+            Item("ultra_original", "初代奥特曼", "Ultraman",
+                listOf("昭和", "1966", "光之巨人"),
+                "1966 年播出的初代作品主角，来自 M78 星云的光之巨人,与早田进合体战斗,标志性的斯派修姆光线开启了整个系列。",
+                img("ultraman hero")),
+            Item("ultra_seven", "赛文奥特曼", "Ultraseven",
+                listOf("昭和", "1967", "宇宙警备队"),
+                "宇宙警备队侦察员,变身者诸星团。头部 V 字形的爱迪头标和艾梅利姆光线辨识度极高,被誉为系列最强战士之一。",
+                img("ultraseven")),
+            Item("ultra_taro", "泰罗奥特曼", "Ultraman Taro",
+                listOf("昭和", "1973", "奥之父之子"),
+                "奥特之父与奥特之母的亲生儿子,头部带有金色双角,必杀技为斯特利姆光线。性格热血,在 ZAT 队员东光太郎身上变身。",
+                img("ultraman taro")),
+            Item("ultra_leo", "雷欧奥特曼", "Ultraman Leo",
+                listOf("昭和", "1974", "狮子座"),
+                "来自狮子座 L77 星云的格斗派奥特曼,以踢技见长,变身者凤源。剧情风格沉重,师从赛文,展现了「努力」这一主题。",
+                img("ultraman leo")),
+            Item("ultra_tiga", "迪迦奥特曼", "Ultraman Tiga",
+                listOf("平成三杰", "1996", "三形态"),
+                "时隔 16 年重启 TV 系列的里程碑作品,可在复合型、力量型、空中型之间切换。变身者大古,主题曲《Take Me Higher》传唱至今。",
+                img("ultraman tiga")),
+            Item("ultra_dyna", "戴拿奥特曼", "Ultraman Dyna",
+                listOf("平成三杰", "1997", "闪光/强壮/奇迹"),
+                "迪迦的正统续作,变身者飞鸟信,同样拥有三种形态。开朗活泼的性格与迪迦的沉稳形成鲜明对比。",
+                img("ultraman dyna")),
+            Item("ultra_gaia", "盖亚奥特曼", "Ultraman Gaia",
+                listOf("平成三杰", "1998", "地球之光"),
+                "诞生于地球本身的奥特曼,变身者高山我夢。与同伴阿古茹(海之光)的对立与和解是核心剧情,主题深入地球与人类的关系。",
+                img("ultraman gaia")),
+            Item("ultra_cosmos", "高斯奥特曼", "Ultraman Cosmos",
+                listOf("平成", "2001", "慈爱"),
+                "以「慈爱」为主题的奥特曼,主张与怪兽共存而非杀戮,变身者春野武藏。月光形态、日冕形态、未来形态各具特色。",
+                img("ultraman cosmos")),
+            Item("ultra_mebius", "梦比优斯奥特曼", "Ultraman Mebius",
+                listOf("平成", "2006", "40周年"),
+                "为纪念奥特曼系列 40 周年推出的回归之作,变身者光辉名,设定上是初代到 80 之后再次来到地球的新人奥特战士。",
+                img("ultraman mebius")),
+            Item("ultra_zero", "赛罗奥特曼", "Ultraman Zero",
+                listOf("新生代", "2009", "赛文之子"),
+                "赛文奥特曼的儿子,头部装饰称作「赛罗滑板」。性格张扬、招式华丽,主导了多部剧场版和新生代联动作品。",
+                img("ultraman zero")),
+            Item("ultra_ginga", "银河奥特曼", "Ultraman Ginga",
+                listOf("新生代", "2013", "新生代起点"),
+                "新生代系列的开端,变身者礼堂光。通过「火花娃娃」与历代奥特曼、怪兽合体的设定,串联起整个奥特宇宙。",
+                img("ultraman ginga")),
+            Item("ultra_orb", "欧布奥特曼", "Ultraman Orb",
+                listOf("新生代", "2016", "融合"),
+                "可融合历代奥特曼之力的旅行战士,变身者克雷纳伊·加伊。代表形态斯佩修姆·赞佩利奥结合了初代与赛文的力量。",
+                img("ultraman orb")),
+        )
+    )
+
     val categories: List<Category> = listOf(
-        dogs, cats, cars, flowers, medicines, architecture, teas, drinks, foods,
+        dogs, cats, cars, flowers, medicines, architecture, teas, drinks, foods, ultraman,
     )
 
     fun categoryById(id: String): Category? = categories.firstOrNull { it.id == id }
